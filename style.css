@@ -1,0 +1,235 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  background-color: black;
+  
+
+  --font:white;
+  --font-gray: #4E5455;
+
+  /*HEADER*/
+  --bc-search:#06181C;
+  --bc-button: #065E7C;
+
+  /*TABLE*/
+  --border-table: #4A808C;
+  --bc-thead: #092D38;
+  --btn-remove: #F75A68;
+  --bc-odd: hsla(196, 61%, 6%, 0.5);
+  --bc-even: hsl(196, 61%, 6%);
+}
+
+body,input,button {
+  font-family: "Roboto", sans-serif;
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+}
+
+#app{
+  padding: 6.0rem 13.0rem;
+  margin: 0 auto;
+  max-width: 110rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 ,0 ,0 ,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.search input {
+  width: 100%;
+  height: 4.2rem;
+  border: none;
+  border-radius:.4rem;
+  padding: 1.8rem 1.6rem;
+  background-color: var(--bc-search);
+  color: #fff;
+}
+
+.search button {
+  height: 4.2rem;
+  display: flex;
+  align-items: center;
+  padding: 1.8rem 3.2rem ;
+  gap: .8rem;
+
+
+  color: var(--font);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: .4rem;
+  background-color: var(--bc-button);
+}
+
+.search button:hover {
+  transition: all 1s;
+  background-color: var(--font);
+}
+.search button img:hover {
+  color: var(--bc-button);
+}
+
+/*Table*/
+table {
+  margin-top: 3.0rem;
+  width: 100%;
+  
+  border-spacing: 0;
+  border: 1px solid var(--border-table);
+  border-radius: .8rem;
+}
+
+table th, tr, span{
+  font-size: 1.4rem;
+  color: var(--font);
+}
+
+table th {
+  background-color: var(--bc-thead);
+  text-align: left;
+  font-weight: bold;
+  padding: 1.6rem 2rem;
+}
+
+table th:first-child {
+  border-top-left-radius: .8rem;
+}
+
+table th:last-child {
+  border-top-right-radius: .8rem;
+}
+
+td.user {
+  display: flex; 
+  align-items: center;
+  gap: 1rem;
+}
+
+td.user p {
+  color: var(--font);
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user span {
+  font-weight: regular;
+}
+
+td.user img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+table td { 
+  padding: 2.0rem;
+}
+
+table td p {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+td .remove{ 
+  background: none;
+  border: none;
+  color: var(--btn-remove);  
+  cursor: pointer;
+}
+
+table tbody tr:first-child td {
+  border-top: none;
+}
+
+table tr td {
+  border-top: 1px solid var(--border-table);
+}
+
+table tr:nth-child(odd) {
+  background: var(--bc-odd);
+}
+
+table tr:nth-child(even) {
+  background: var(--bc-even);
+}
+
+/*Empty*/
+table tbody .empty td {
+  font-family: "Roboto Mono", monospace;
+  font-size: 2.5rem;
+  color: var(--font-gray);
+
+  display: table-cell;
+  text-align: center;
+  height: 35rem;
+  padding: 0;
+  background-color: var(--bc-search);
+}
+
+table tbody .empty td div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/*Scrollbar*/
+tbody {
+  display: block;
+  max-height: 38rem;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+
+tbody::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+tbody::-webkit-scrollbar-track {
+  border: 4px solid transparent;
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: var(--border-table);
+  border-radius: 1rem;
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
