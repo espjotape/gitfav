@@ -233,3 +233,17 @@ tbody tr {
   width: 100%;
   table-layout: fixed;
 }
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  header #logo {
+    margin-bottom: 2rem;
+  }
+  .search {
+    width: 100%;
+  }
+
+}
